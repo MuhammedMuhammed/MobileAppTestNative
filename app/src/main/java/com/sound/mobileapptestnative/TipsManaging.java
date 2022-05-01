@@ -63,6 +63,7 @@ public class TipsManaging extends AppCompatActivity {
                 float tip_val = total * ratio;
                 bills.setTips(tip_val);
                 tips.setText(String.valueOf(tip_val));
+                personVal.setText(setPersonAmount());
             }
         });
 
@@ -75,12 +76,17 @@ public class TipsManaging extends AppCompatActivity {
                 return false;
             }
             float tip_val = Float.parseFloat(tipVal);
+            bills.setTips(tip_val);
             float total =bills.getTotal();
             tipsPercent = tip_val / total;
-            if(tipsPercent<=1) {
+            if(tipsPercent>1) {
+                slider.setValue(1);
 
+            }else{
                 slider.setValue(tipsPercent);
+
             }
+            personVal.setText(setPersonAmount());
             return false;
         });
     }
