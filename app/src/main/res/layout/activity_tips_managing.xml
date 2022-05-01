@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Native App"
+            android:background="#A9A9A9"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+
+        android:gravity="center"
+
+        android:orientation="vertical"
+        tools:context=".TipsManaging">
+
+        <TextView
+            android:id="@+id/valPerperson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="0.0"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/nopSpinner"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                style="@style/SpinnerStyle"
+                android:foregroundGravity="center"
+                android:overlapAnchor="false"
+                android:padding="5dp"
+                android:spinnerMode="dropdown"
+                android:theme="@style/spinnerItemStyle"
+                tools:ignore="SpeakableTextPresentCheck" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiplayout"
+                android:layout_width="match_parent"
+                app:boxStrokeColor="#A9A9A9"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/tips">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tipsEditText"
+                    style="@style/editTextStyle"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/tipsSlider"
+            app:thumbRadius="5dp"
+            app:thumbColor="#FF2400"
+            app:trackColor="#29FF2400"
+            app:tickVisible="true"
+            style="@style/Widget.MaterialComponents.Slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="5dp"
+            android:scrollbarStyle="outsideOverlay"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
