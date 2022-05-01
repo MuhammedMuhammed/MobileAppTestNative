@@ -89,7 +89,7 @@ public class TipsManaging extends AppCompatActivity {
 
     String setPersonAmount()
     {
-        float splitAmount= bills.getTotal()/selectedVal;
+        float splitAmount= (bills.getTotal()+bills.getTips())/selectedVal;
 
         return String.valueOf(splitAmount);
     }
